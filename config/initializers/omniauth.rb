@@ -60,4 +60,11 @@ Rails.application.config.middleware.use OmniAuth::Builder do
       ENV.fetch('BITBUCKET_KEY'),
       ENV.fetch('BITBUCKET_SECRET')
   end
+
+  if Rails.application.config.samson.auth.okta
+    require 'omniauth-oktaoauth'
+    provider :okta,
+      ENV.fetch['OKTA_CLIENT_ID'],
+      ENV.fetch['OKTA_CLIENT_SECRET']
+  end
 end

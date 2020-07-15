@@ -138,6 +138,7 @@ module Samson
     config.samson.auth.ldap = Samson::EnvCheck.set?("AUTH_LDAP")
     config.samson.auth.gitlab = Samson::EnvCheck.set?("AUTH_GITLAB")
     config.samson.auth.bitbucket = Samson::EnvCheck.set?("AUTH_BITBUCKET")
+    config.samson.auth.okta = Samson::EnvCheck.set?("AUTH_OKTA")
 
     config.samson.uri = URI(
       ENV["DEFAULT_URL"] ||
